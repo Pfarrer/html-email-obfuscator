@@ -1,4 +1,4 @@
-email-obfuscator for Node.js
+html-email-obfuscator for Node.js
 ============================
 
 This module combines some Email obfuscation technics.
@@ -14,13 +14,14 @@ The Email address "mail@example.com" will result in the following string:
 ```js
 var emailObfuscator = require('email-obfuscator');
 
-var obfuscated = emailObfuscator.obfuscate('mail@example.com');
-// obfuscated = 'znvyrknzcyr.pbz/4'
-
+// Obfuscate and encode as HTML <script>
 var htmlScript = emailObfuscator.asHtmlScript('mail@example.com');
 // htmlScript = See below
 
-var original = emailObfuscator.unobfuscate(obfuscate);
+// Obfuscate and return as string
+var obfuscated = emailObfuscator.obfuscate('mail@example.com');
+// obfuscated = 'znvyrknzcyr.pbz/4'
+var original = emailObfuscator.unobfuscate(obfuscated);
 // original = 'mail@example.com'
 ```
 
